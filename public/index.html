@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+  <body>
+    <form
+      class="signup-form"
+      action="/signup"
+      method="POST"
+      enctype="multipart/form-data"
+      onsubmit="return validateForm()"
+    >
+      <h2>Sign Up</h2>
+
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="Email"
+        required
+      />
+
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="Password 8 characters long"
+        required
+        minlength="8"
+      />
+
+      <input
+        type="file"
+        name="profileImage"
+        id="profileImage"
+        accept="image/*"
+        required
+      />
+
+      <div id="error-message" class="error"></div>
+
+      <button type="submit">Register</button>
+
+      <p>
+        Already have an account?
+        <a href="/login">Login here</a>
+      </p>
+    </form>
+
+    <script src="/js/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vega6 Blogs</title>
+    <link rel="stylesheet" href="/css/dashboard.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h2>Welcome to the Dashboard of Vega6 Blogs</h2>
+      <div class="profile">
+        <img id="profileImage" src="" alt="Profile Image" />
+        <p id="userEmail"></p>
+      </div>
+    </div>
+
+    <button id="addBlogBtn">Add New Blog</button>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Image</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="blogTableBody"></tbody>
+    </table>
+
+    <!-- Add/Edit Modal -->
+    <div id="blogModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('blogModal')">&times;</span>
+        <h3 id="modalTitle">Add Blog</h3>
+        <form id="blogForm">
+          <input type="hidden" id="blogId" />
+          <div class="form-field">
+            <input type="text" id="title" placeholder="Title" required />
+          </div>
+          <div class="form-field">
+            <textarea
+              id="description"
+              placeholder="Description"
+              required
+            ></textarea>
+          </div>
+          <div class="form-field">
+            <input type="file" id="image" />
+          </div>
+          <button type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- View Modal -->
+    <div id="viewModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('viewModal')">&times;</span>
+        <h3 id="viewTitle"></h3>
+        <img
+          id="viewImage"
+          style="width: 100%; max-height: 300px; object-fit: cover"
+        />
+        <p id="viewDescription"></p>
+      </div>
+    </div>
+    <script src="/js/dashboard.js"></script>
+  </body>
+</html>
